@@ -7,7 +7,6 @@ import "./GitAllPeople.css";
 const GitAllPeople = () => {
   const [allAccounts, setAllAccounts] = useState([]);
   const [copyId, setCopyId] = useState("");
-  const [idDelete, setIdToDelete] = useState("");
 
   const handleCopyClick = (id) => {
     navigator.clipboard.writeText(id);
