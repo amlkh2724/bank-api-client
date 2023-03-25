@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+// import './App.css';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ListPeople from "./pages/ListPeople.js/ListPeople";
+import TransactionPage from "./pages/TransactionPage/TransactionPage";
+import SignUp from "./pages/SignUp/SignUp";
+import Deposit from "./pages/Deposit/Deposit";
+import Withdraw from "./pages/Withdraw/Withdraw";
 
 function App() {
+  const router = createBrowserRouter([
+    { path: "/", element: <ListPeople /> },
+    { path: "/signup", element: <SignUp /> },
+    { path: "/transactions/:id", element: <TransactionPage /> },
+    { path: "/deposit/:id", element: <Deposit /> },
+    { path: "/withdraw/:id", element: <Withdraw /> },
+  ]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RouterProvider router={router}>
+      <div>{<div></div>}</div>
+    </RouterProvider>
   );
 }
 
